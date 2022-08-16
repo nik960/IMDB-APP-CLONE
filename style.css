@@ -1,0 +1,1361 @@
+/** global element styling **/
+
+@import "https://fonts.googleapis.com/css?family=Lato:400,700";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Styling Header Part */
+
+
+header {
+  position: relative;
+  top: 0;
+  width: 100%;
+  min-height: 50px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(23,16,16);
+}
+
+header .mobile-menu {
+  display: none;
+}
+
+header .mobile-menu i {
+  color: #fff;
+  cursor: pointer;
+  font-size: 21px;
+  width: 12px;
+}
+
+@media (max-width: 991px) {
+  header .mobile-menu {
+    display: inline-block;
+  }
+}
+
+header .logo {
+	margin-left: 20px;
+	cursor: pointer;
+}
+
+header .logo svg {
+	width: 64;
+	height: 32;
+}
+
+header .menu i {
+  color: #999999;
+  cursor: pointer;
+  font-size: 16px;
+  width: 15px;
+}
+
+header span.menu-button-text {
+	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-box {
+  width: 60%;
+  position: relative;
+  display: flex;
+
+}
+
+.search {
+  width: 100%;
+  border: none;
+  border-right: none;
+  padding: 5px;
+  height: 30px;
+  outline: none;
+  color: #9dbfaf;
+  border-radius: 5px 0 0 5px;
+}
+
+.search:focus {
+  color: #000;
+  border: 2px solid #fda253;
+}
+
+.search-btn {
+  width: 40px;
+  height: 30px;
+  border: 1px solid #fda253;
+  background: #fff;
+  text-align: center;
+  color: #555555;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+@media (max-width: 991px) {
+  header #imdb-pro, header #watch-list {
+    display: none;
+  }
+
+  header .menu span.menu-button-text, header .menu .btn.menu-btn i {
+    display: none;
+  }
+
+  .search-btn {
+    color: #fff;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+  }
+
+  .search-box {
+    width: 50%;
+    background: transparent;
+  }
+
+  input#inputSearch.search {
+    background: transparent;
+    color: #fff;
+  }
+
+  .search:focus {
+    border: none;
+  }
+}
+
+/* Styling Banner */
+
+.banner {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 10px 40px;
+}
+
+.banner img {
+	width: 970px;
+	height: 250px;
+	cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .banner img {
+    width: 320px;
+    height: 100px;
+  }
+}
+
+/* Styling Page Wrapper */
+
+#page-wrapper {
+  position: relative;
+  margin: 20px 30px 60px;
+  padding: 10px 30px;
+  /*background: #008080; (Teal color, used for adjusting div alignment)*/
+}
+
+@media (max-width: 991px) {
+  #page-wrapper {
+    margin: 20px 10px 60px;
+    padding: 10px 10px;
+  }
+}
+
+/* Styling Search Results Section */
+
+
+section {
+    position: relative;
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: 250ms all;
+}
+
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 8px 6px 8px;
+    transition: 250ms all;
+    border-radius: 4px;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.imageContainer img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 267px;
+}
+
+
+.imageContainer:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .imageContainer {
+    flex-wrap: wrap;
+  }
+
+  .imageContainer img {
+    width: 152px;
+    height: 224px;
+  }
+}
+
+/* Styling main slider part */
+
+.main {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 30px;
+  /*background: #ff8000; (Orange color, used for adjusting div alignment)*/
+}
+
+
+/* Styling Carousel*/
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+  width: 70%;
+  cursor: pointer;
+}
+
+.carousel:hover {
+  opacity: 80%;
+}
+
+.carousel .carousel__item,
+.carousel .carousel__item--hidden {
+  display: none;
+}
+
+.carousel .carousel__item img {
+  width: 670px;
+  height: 450px;
+  width: 100%;
+}
+
+.carousel .carousel__item--visible {
+  display: block;
+  animation: fadeVisibility 0.5s;
+}
+
+.carousel .carousel__actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel .carousel__actions button {
+  border-radius: 2px;
+  border: 1px solid #fff;
+  font-weight: bold;
+  cursor: pointer;
+  width: 45px;
+  height: 55px;
+  color: #fff;
+  font-size: 27px;
+  background: transparent;
+}
+
+.carousel .carousel__actions button:hover {
+  color: #f4bc1c;
+}
+
+.carousel .carousel__actions button#carousel__button--prev {
+  margin-left: 20px;
+}
+
+.carousel .carousel__actions button#carousel__button--next {
+  margin-right: 20px;
+}
+
+@keyframes fadeVisibility {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: opacity linear;
+  }
+}
+
+
+.main .up-next {
+  height: 445px;
+  width: 29%;
+  background: #1b1b1b;
+}
+
+@media (max-width: 991px) {
+  .main .up-next {
+    display: none;
+  }
+
+  .main .carousel {
+    width: 100%;
+  }
+
+  .carousel .carousel__item img {
+    width: 360px;
+    height: 252px;
+  }
+}
+
+/* Styling Headings and Sub-headings */
+
+.main-heading h2 {
+  color: #f4bc1c;
+  padding: 2px 5px;
+  font-size: 30px;
+  margin-bottom: 20px;
+
+}
+
+.main-heading h2#featured-today {
+  border-left: 4px solid #f4bc1c;
+  border-radius: 2px;
+}
+
+
+.sub-heading h2 {
+  color: #fff;
+  padding: 2px 5px;
+  font-size: 24px;
+  border-left: 4px solid #f4bc1c;
+  border-radius: 2px;
+  margin: 2px 0 2px;
+}
+
+.sub-heading p.subtitle {
+  color: #ebecf0;
+  font-size: 18px;
+  margin: 4px 0 8px;
+  font-weight: normal;
+}
+
+
+@media (max-width: 991px) {
+  .main-heading h2 {
+    font-size: 24px;
+  }
+
+  .sub-heading h2 {
+    font-size: 21px;
+  }
+
+  .sub-heading p.subtitle {
+    font-size: 15px;
+  }
+}
+
+
+
+/* Styling Card Container for all flexbox cards */
+
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0 10px;
+ /* background: #ff8000;*/
+
+}
+
+@media (max-width: 991px) {
+  .card-container {
+    flex-wrap: wrap;
+  }
+}
+
+
+
+/* Styling Movies Poster Cards */
+
+.poster-card {
+  width: 180px;
+  height: 480px;
+  background: #1b1b1b;
+  margin: 10px 12px;
+  border-radius: 4px;
+}
+
+.poster-card .image {
+  width: 100%;
+  height: 267px;
+  cursor: pointer;
+}
+
+.poster-card .image:hover {
+  opacity: 80%;
+}
+
+@media (max-width: 991px) {
+  .poster-card {
+    width: 152px;
+    height: 430px;
+    margin: 10px 4px;
+  }
+
+  .poster-card .image {
+    height: 224px;
+  }
+}
+
+
+
+/* Styling Pop-up Box */
+
+#popup-box {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 600px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 100;
+  pointer-events: none;
+}
+
+
+#popup-box.active {
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#popup-box a {
+  position: relative;
+  padding: 5px 20px;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+}
+
+#popup-box .content {
+  position: relative;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#popup-box .img-bx {
+  width: 180px;
+  height: 267px;
+}
+
+#popup-box .movie-overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  padding: 0px 10px;
+}
+
+#popup-box .movie-overview h1 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+#popup-box .movie-overview h1, #popup-box .movie-overview p {
+  color: #000;
+}
+
+
+@media (max-width: 991px) {
+  #popup-box {
+    width: 310px;
+    height: 100vh;
+  }
+
+  #popup-box .content {
+    flex-wrap: wrap;
+  }
+
+  #popup-box .img-bx {
+    width: 135px;
+    height: 200px;
+  }
+
+  #popup-box .movie-overview {
+    margin-top: 10px;
+  }
+
+  #popup-box .movie-overview p {
+    font-size: 14px;
+  }
+
+  #popup-box .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.poster-card #img7 {
+  background: url(https://m.media-amazon.com/images/M/MV5BOTdmNTFjNDEtNzg0My00ZjkxLTg1ZDAtZTdkMDc2ZmFiNWQ1XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.poster-card #img8 {
+  background: url(https://i.pinimg.com/originals/28/b9/95/28b995d070004d19862569ade1e820ef.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.poster-card #img9 {
+  background: url(https://upload.wikimedia.org/wikipedia/en/1/1f/Knives_Out_poster.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
+.poster-card #img10 {
+  background: url(https://i.pinimg.com/originals/cc/47/a5/cc47a507854dfe4ea145ebb4c9ae51c4.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.poster-card #img11 {
+  background: url(https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.poster-card #img12 {
+  background: url(https://www.easterneye.biz/wp-content/uploads/2020/10/Chhalaang-Poster-.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.poster-card #img13 {
+  background: url(https://upload.wikimedia.org/wikipedia/en/5/58/Borat_2_poster.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
+.poster-card #img14 {
+  background: url(https://images-na.ssl-images-amazon.com/images/I/61bMkkwpduL._AC_SY741_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.poster-card #img15 {
+  background: url(https://i.etsystatic.com/16355321/r/il/23bda1/1427065762/il_570xN.1427065762_j2cy.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.poster-card #img16 {
+  background: url(https://m.media-amazon.com/images/M/MV5BMjNkMzc2N2QtNjVlNS00ZTk5LTg0MTgtODY2MDAwNTMwZjBjXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.poster-card #img17 {
+  background: url(https://images-na.ssl-images-amazon.com/images/I/61k7Mx2IjzL._SY550_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.poster-card #img18 {
+  background: url(https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+
+.ratings, .movie-title, .watchlist, .trailer-and-info {
+  padding: 10px 15px;
+}
+
+.ratings {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ratings span {
+  font-size: 16px;
+  color: #d2d2d2;
+}
+
+.ratings svg {
+  width: 15px;
+  height: 15px;
+  color: yellow;
+  margin: 0 5px;
+}
+
+.watchlist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #333333;
+  margin: 2px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.watchlist span {
+  color: #2a9df4;
+  /*padding: 6px 15px;*/
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.watchlist svg {
+  color: #2a9df4;
+  width: 21px;
+  height: 21px;
+/*  margin: 0 5px;*/
+  /*padding-top: 4px;*/
+}
+
+.watchlist:hover {
+  background: #555555;
+
+}
+
+.movie-title {
+  width: 160px;
+  height: 50px;
+  overflow-y: hidden;
+  font-size: 16px;
+}
+
+
+.trailer-and-info {
+  margin-top: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trailer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: gray;
+  padding: 4px 10px;
+  border-radius: 2px;
+/*  padding: 2px 6px;
+*/
+}
+
+.trailer span {
+  font-weight: bold;
+}
+
+.info {
+  color: gray;
+  padding: 6px 9px;
+  border-radius: 50%;
+}
+
+.info:hover {
+  background: #333333;
+  color: #fff;
+}
+
+.trailer:hover {
+  background: #333333;
+  color: #fff;
+}
+
+
+
+/* Styling Featured today */
+
+.featuring {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.featured-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 10px;
+/*  background: #ff8000;*/
+  max-width: 70%;
+}
+
+
+.featured {
+  width: 400px;
+  height: 250px;
+  background: #000;
+  margin: 10px 15px;
+  cursor: pointer;
+}
+
+.featured .featured-img {
+  width: 100%;
+  height: 220px;
+}
+
+.featured .featured-img:hover {
+  opacity: 80%;
+}
+
+.featured p {
+  color: #fff;
+  margin: 4px 0;  
+}
+
+.googleAd {
+  cursor: pointer;
+}
+
+
+.featured #f1 {
+  background: url(https://m.media-amazon.com/images/M/MV5BZDI4ZThhOGUtM2JhZC00OTE0LWFkZDUtNjdiNDQyNzI3ZGNjXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_UX500_CR0,0,500,281_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.featured #f2 {
+  background: url(https://m.media-amazon.com/images/M/MV5BNzM5ZjNhNjQtYTBmNi00ZTIzLTk5NzYtZDkxZTdjM2RiMjM2XkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_UX500_CR0,0,500,281_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 991px) {
+  .featuring {
+    flex-direction: column;
+  }
+
+  .featured .featured-img {
+    width: 311px;
+    height: 175px;
+  }
+
+  .featured-container {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+}
+
+/* Styling From your watchlist part */
+
+
+#from-your-watchlist-box {
+  margin: 15px 0 25px;
+}
+
+#from-your-watchlist-box .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 30px 0 30px;
+}
+
+#from-your-watchlist-box .text p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#from-your-watchlist-box .text span {
+  color: #ebecf0;
+  font-size: 15px;
+}
+
+
+
+/* What to watch section */
+
+#what-to-watch-box {
+  margin: 15px 0 25px;
+}
+
+/* Styling Buttons */
+
+.text-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-button button#browse {
+  font-size: 15px;
+  font-weight: bold;
+  background: #f4bc1c;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 60px;
+  position: relative;
+  transform: translateY(-60%);
+  cursor: pointer;
+}
+
+.text-button button#browse:hover, .text-button button#signin:hover {
+  background: #e1ad01;
+}
+
+.text-button button#signin {
+  font-size: 15px;
+  font-weight: bold;
+  background: #f4bc1c;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 90px;
+  cursor: pointer;
+}
+
+/* Styling More to Watch Part */
+
+#more-to-watch-box {
+  margin: 25px 0 30px;
+}
+
+.more-to-watch {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  max-width: 50%;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.more-to-watch .text-button button {
+  background: transparent;
+  border-radius: 4px;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 8px 100px;
+  cursor: pointer;
+}
+
+.more-to-watch .text-button button:hover {
+  background: #1b1b1b;
+}
+
+
+@media (max-width: 991px) {
+  .text-button button#browse {
+    padding: 8px 50px;
+    transform: none;
+  }
+
+  .text-button button#signin {
+    padding: 8px 60px;
+  }
+
+  .more-to-watch {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 100%;
+  }
+
+  .more-to-watch .text-button button {
+    margin-bottom: 10px;
+    padding: 8px 80px;
+  }
+}
+
+
+/* Styling IMDb Originals */
+
+.video-card {
+  width: 360px;
+  height: 240px;
+  background: #000;
+  margin: 10px 15px;
+  cursor: pointer;
+}
+
+.video-card .video {
+  width: 100%;
+  height: 196px;
+}
+
+.video-card .video:hover {
+  opacity: 80%;
+}
+
+
+.video-card p {
+  color: #fff;
+  margin: 8px 0;
+}
+
+.video-card #vc1 {
+  background: url(https://m.media-amazon.com/images/M/MV5BNWUxNjMzMmYtZGI2ZS00OTRlLWE1ZmQtMDQ0MmI0NmMzMzVmXkEyXkFqcGdeQW1pYnJ5YW50._V1_UX500_CR0,0,500,281_.jpg%20500w,%20https://m.media-amazon.com/images/M/MV5BNWUxNjMzMmYtZGI2ZS00OTRlLWE1ZmQtMDQ0MmI0NmMzMzVmXkEyXkFqcGdeQW1pYnJ5YW50._V1_UX750_CR0,0,750,422_.jpg%20750w,%20https://m.media-amazon.com/images/M/MV5BNWUxNjMzMmYtZGI2ZS00OTRlLWE1ZmQtMDQ0MmI0NmMzMzVmXkEyXkFqcGdeQW1pYnJ5YW50._V1_UX1000_CR0,0,1000,563_.jpg%201000w);
+  background-position: center;
+  background-size: cover;
+}
+
+.video-card #vc2 {
+  background: url(https://m.media-amazon.com/images/M/MV5BZWJjYjdlZjEtNWEyMS00NzUwLWJiZDItZjFmZjhlYWZjZWY2XkEyXkFqcGdeQWxpenpp._V1_UX500_CR0,0,500,281_.jpg%20500w,%20https://m.media-amazon.com/images/M/MV5BZWJjYjdlZjEtNWEyMS00NzUwLWJiZDItZjFmZjhlYWZjZWY2XkEyXkFqcGdeQWxpenpp._V1_UX750_CR0,0,750,422_.jpg%20750w,%20https://m.media-amazon.com/images/M/MV5BZWJjYjdlZjEtNWEyMS00NzUwLWJiZDItZjFmZjhlYWZjZWY2XkEyXkFqcGdeQWxpenpp._V1_UX1000_CR0,0,1000,563_.jpg%201000w);
+  background-position: center;
+  background-size: cover;
+}
+
+.video-card #vc3 {
+  background: url(https://m.media-amazon.com/images/M/MV5BMTYzZGFiMzQtMjlkYy00MmU4LTlmZjctZDVmOWRjYmExZGEwXkEyXkFqcGdeQWplZmZscA@@._V1_UX500_CR0,0,500,281_.jpg%20500w,%20https://m.media-amazon.com/images/M/MV5BMTYzZGFiMzQtMjlkYy00MmU4LTlmZjctZDVmOWRjYmExZGEwXkEyXkFqcGdeQWplZmZscA@@._V1_UX750_CR0,0,750,422_.jpg%20750w,%20https://m.media-amazon.com/images/M/MV5BMTYzZGFiMzQtMjlkYy00MmU4LTlmZjctZDVmOWRjYmExZGEwXkEyXkFqcGdeQWplZmZscA@@._V1_UX1000_CR0,0,1000,563_.jpg%201000w);
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 991px) {
+  .video-card {
+    width: 311px;
+    height: 235px;
+  }
+
+  .video-card .video {
+    height: 175px;
+  }
+}
+
+/* Styling Top Box Office Movies */
+
+#top-office-box {
+  margin: 25px 0 30px;
+}
+
+
+.top-box-office {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+/*  background: #800000;*/
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.top-box-office .movie-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50%;
+  padding: 4px 10px;
+}
+
+.top-box-office .movie-list .movie-name {
+  display: flex;
+  padding: 20px 0;
+/*  background: #000080;*/
+  width: 100%;
+  cursor: pointer;
+}
+
+.top-box-office .movie-list .movie-name p {
+  color: #fff;
+  font-size: 18px;
+}
+
+.top-box-office .movie-list .movie-name p:hover, .top-box-office .movie-list .movie-name span:hover {
+  color: #d3d3d3;
+}
+
+.top-box-office .movie-list .movie-name aside {
+  color: #f9c70c;
+  padding: 0 4px;
+}
+
+@media (max-width: 991px) {
+  .top-box-office {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+/* Styling Coming Soon to Box Office movies */
+
+.comingsoon {
+  width: 360px;
+  height: 250px;
+  background: #000;
+  margin: 10px 15px;
+  cursor: pointer;
+}
+
+.comingsoon .coming-img {
+  width: 100%;
+  height: 210px;
+}
+
+.comingsoon .coming-img:hover {
+  opacity: 80%;
+}
+
+.comingsoon p {
+  color: #fff;
+  margin: 8px 0;
+}
+
+.comingsoon #cms1 {
+  background: url(https://m.media-amazon.com/images/M/MV5BZjQ2MTEzNWEtOGRmOS00MDk2LWFhZDgtMDVkZmY3Y2ZmM2FiXkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_UX500_CR0,0,500,281_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.comingsoon #cms2 {
+  background: url(https://m.media-amazon.com/images/M/MV5BNjY0NTc2OWQtNmRhNy00NTQ5LWJlYzktZWE0MGE4NDliNTA3XkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_UX500_CR0,0,500,281_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.comingsoon #cms3 {
+  background: url(https://m.media-amazon.com/images/M/MV5BMGNmZGI3ODEtNmUyNi00NWEwLTlmYmQtNmJkYjQwMDllYmFhXkEyXkFqcGdeQWFybm8@._V1_UY281_CR0,0,500,281_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Styling Editor's Picks Section */
+
+
+#editors-picks-box {
+  margin: 25px 0 30px;
+}
+
+
+.editorpicks-card {
+  width: 360px;
+  height: 240px;
+  background: #000;
+  margin: 10px 15px;
+  cursor: pointer;
+}
+
+
+.editorpicks-card .editorspicks-img {
+  width: 100%;
+  height: 196px;
+}
+
+.editorpicks-card .editorspicks-img:hover {
+  opacity: 80%;
+}
+
+
+.editorpicks-card p {
+  color: #fff;
+  margin: 8px 0;  
+}
+
+.editorpicks-card #ep1 {
+  background: url(https://m.media-amazon.com/images/M/MV5BMTE4NjdmMTktNGU0Ni00Zjc5LTk3NGMtZTNkMmU1NzU5ZGY5XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_UX500_CR0,0,500,281_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.editorpicks-card #ep2 {
+  background: url(https://m.media-amazon.com/images/M/MV5BMzAyOTIzNWUtN2I1Mi00YjhhLWIwNjAtNTg5NzNhNTRjOWE3XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_UX500_CR0,0,500,281_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.editorpicks-card #ep3 {
+  background: url(https://m.media-amazon.com/images/M/MV5BNjk3ZmFlNzAtMTkxYy00NmEwLTkxMzItNzYxNzA4M2FhN2I1XkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_UY281_CR0,0,500,281_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+
+/* Styling Born today */
+
+#born-today-box {
+  margin: 25px 0 30px;
+}
+
+.birthday-card {
+  width: 180px;
+  height: 180px;
+  background: #000;
+  margin: 10px 12px;
+  cursor: pointer;
+}
+
+.birthday-card .birthday-img {
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  background: #1167b1;
+  margin: 0 auto;
+}
+
+.birthday-card .birthday-img:hover {
+  opacity: 80%;
+}
+
+.birthday-card p {
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 991px) {
+  .birthday-card {
+    width: 150px;
+    height: 180px;
+    margin: 8px 6px;
+  }
+
+  .birthday-card .birthday-img {
+    width: 125px;
+    height: 125px;
+  }
+}
+
+.birthday-card #image1 {
+  background: url(https://m.media-amazon.com/images/M/MV5BMTU5MTUzNDAwN15BMl5BanBnXkFtZTcwMjA0NjcyNw@@._V1_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.birthday-card #image2 {
+  background: url(https://pagesix.com/wp-content/uploads/sites/3/2018/08/sean-young.jpg?quality=80&strip=all);
+  background-position: center;
+  background-size: cover;
+}
+
+.birthday-card #image3 {
+  background: url(https://static.onecms.io/wp-content/uploads/sites/6/2019/08/gettyimages-1169794972-2000.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.birthday-card #image4 {
+  background: url(https://pyxis.nymag.com/v1/imgs/1ae/b83/79e5888ff19fca0faae84687c6eda98c7b-03-Joel-McHale.rsquare.w700.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.birthday-card #image5 {
+  background: url(https://tvguide1.cbsistatic.com/mediabin/showcards/celebs/d-f/thumbs/dan-byrd-145808-2_828x1104.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.birthday-card #image6 {
+  background: url(https://m.media-amazon.com/images/M/MV5BODAwMzIxMTQxNl5BMl5BanBnXkFtZTcwNjg3MDY0Nw@@._V1_UX214_CR0,0,214,317_AL_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Styling Top News */
+
+#top-news-box {
+  margin: 25px 0 30px;
+}
+
+.news-card {
+  width: 370px;
+  height: 133px;
+/*  background: #ffa500;*/
+  margin: 10px 15px;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.news-card:hover {
+  opacity: 85%;
+}
+
+.news-card .news-image {
+  width: 90px;
+  height: 133px;
+  background: #197402;
+}
+
+.news-card .news-item {
+  padding: 4px 10px;
+  width: 280px;
+  background: #000;
+  color: #fff;
+}
+
+
+.news-card .news-item span {
+  color: #d3d3d3;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.news-card #newsimg1 {
+  background: url(https://m.media-amazon.com/images/M/MV5BMWU0MGYwZWQtMzcwYS00NWVhLTlkZTAtYWVjOTYwZTBhZTBiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX90_CR0,0,90,133_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.news-card #newsimg2 {
+  background: url(https://m.media-amazon.com/images/M/MV5BZmM3MWNjNDgtYTlkMy00YmViLWJkYjYtZDQzYmU5YjhkNjY3XkEyXkFqcGdeQXVyMTE0MzQwMjgz._V1_UY133_CR59,0,90,133_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.news-card #newsimg3 {
+  background: url(https://m.media-amazon.com/images/M/MV5BZjY4NTcyMzMtZmMwOC00MmFjLWJmZjEtNDcxNTE5OTZmNjM4XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UY133_CR55,0,90,133_.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.news-button {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.news-button button {
+  font-size: 15px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  padding: 6px 21px;
+  cursor: pointer;
+  margin: 6px;
+}
+
+.news-button button:hover {
+  background: #333333;
+}
+
+
+@media (max-width: 991px) {
+
+  .news-card {
+    width: 311px;
+    height: 133px;
+  }
+
+  .news-button {
+    flex-wrap: wrap;
+  }
+
+  .news-button button {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+}
+
+
+/* Styling Footer */
+
+footer {
+	background: #000;
+/*	height: 400px;
+*/	
+  padding: 15px 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+footer .social-icons, footer .about-site, footer .terms-of-use, footer .company, footer .footnote {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+footer .social-icons a i {
+  font-size: 21px;
+	padding: 12px;
+	color: #fff;
+}
+
+footer .social-icons a:hover i {
+	background: #1b1b1b;
+	border-radius: 50%;
+}
+
+footer a {
+	padding-left: 25px;
+}
+
+@media (max-width: 991px) {
+  footer {
+    padding: 15px 20px;
+  }
+
+  footer .social-icons, footer .about-site, footer .terms-of-use {
+    flex-wrap: wrap;
+  }
+
+  footer .social-icons a i {
+    padding: 6px;
+  }
+
+  footer a {
+    padding: 0 12px 8px 0;
+  }
+}
+
+/* End of Cascading Style Sheets */
+
